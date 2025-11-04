@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "description" content = "shitty ass website, dont go here">
+        <link rel="stylesheet" href="CSS/portfolio.css">
+
+        <title>Home sweet home...</title>
+    </head>
+    <body>
+        <header>
+            <h1> Cole Neely </h1>
+
+            <ul>
+                <li> <a href = "index.html">Home</a> </li>
+                <li> <a href = "skills.html">My Skills</a> </li>
+                <li> <a href = "projects.html">Projects</a> </li>
+                <li> <a href = "contact.html">Contacts</a> </li>
+            </ul>
+        </header>
+        <hr/>
+        <br>
+        <h2 class="quotes" id="quoteheader"></h2>
+        <script defer>
+            const api_url=`https://api.allorigins.win/get?url=${encodeURIComponent('https://quotes.rest/qod')}`;
+
+    async function getapi(url)
+    {
+        const response = await fetch(url);
+        var data = await response.json();
+        console.log(data);
+    }
+
+        getapi(api_url);
+        var header = document.getElementById("quoteheader");
+
+    </script>
+
+
+        <br>
+        <main>
+            <h2>About Me</h2>
+            <article>
+                <p>
+                    <strong>Hello!</strong> I'm a aspiring game dev from Westland, Michigan. When it comes to game design, I feel that if your heart isn't in it, it's not worth it.
+                    I have multiple languages under my belt, but I now especially understand C++ and Python thanks to college and my old high school days. Since then, I have been making games
+                    since, and I hopefully will continue to.
+                    
+                    <br>
+                    
+                    
+                    <br>
+                </p>
+                <p>
+                    Besides that, I enjoy bowling, older video games, and a lot of music. I try my best to really branch out and
+                    find new things to read or listen to, and at least hope that I can try and make a difference in the industry, where
+                    I feel like gaming has become more of a tool for companies to generate as much profit as possible before pulling the plug.
+                </p>
+                Here are a few pictures!
+                <br>
+                <!--For the love of everything holy, please remember to put the image you're scripting ABOVE your script.-->
+                <img id="slide"width="300">
+                <script defer> //Defer means that this loads when the webpage itself loads. Very useful for controlling what goes last!
+                    const img_array = ["the_legend.jpg", "oven.gif"]
+                    
+                    let currentimage = 0;
+                    const img = document.getElementById('slide');
+                    
+                    function slideshow(){
+                        currentimage++;
+                        if(currentimage >= img_array.length){
+                            currentimage = 0;
+                        }
+                        img.src =img_array[currentimage];
+                    }
+                    
+                    let stop = setInterval(slideshow, 1000)
+                    </script>
+
+                    
+                <br>
+            </article>
+            <article>
+                <p>
+                    <h2> How Can I Stalk You Best? </h2>
+                    Reach out to me via email or discord. It's not that hard to get ahold of me.</br>
+                    If you are interested, put your email below to get in contact with me.
+                    This is where you can get me immediately.
+                    <br>
+                    <input type="text" placeholder="enter your email here...">
+                    <input type="button" placeholder="submit" title="Submit">
+                    <br>                    
+                </p>
+            </article>
+            
+        </main>
+        <footer><i>©2025 by Cole Neely</i></footer>
+    </body>
+    <!--Again, this is the main webpage, but a giant work in progress.-->
+    <!-- I guess that this will just be another portfolio job, hopefully one that I don't lose this time.-->
+    
+    <!-- This will be a portfolio index. I changed the title to be orange. Today I learned how to actively change colors for text.-->
+    <!--Added a YT video, table and list.-->
+</html>

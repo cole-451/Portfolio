@@ -1,0 +1,38 @@
+body{
+    width: auto;
+    background-color: #FA5200;
+}
+
+header{
+    size:30px;
+}
+
+h1{
+    color: #FA0F1C;
+    text-align: center;
+    background-color: #FA860F;
+    font-family: monospace;
+    font-size: 100px;
+}
+
+h2{
+    background-color: #FAA80F;
+    margin-top: 20px;
+    margin-bottom: 20px;
+        font-size: 50px;
+        font-family: monospace;
+
+
+}
+
+img{
+    margin: 20px 20px 20px 20px;
+}
+
+p{
+    margin: 50px 50px 50px 50px;
+}
+
+footer{
+    color:yellow;
+}
