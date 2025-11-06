@@ -20,21 +20,25 @@
         </header>
         <hr/>
         <br>
-        <h2 class="quotes" id="quoteheader"></h2>
+        <h2 class="quote" id="quote"></h2>
+        <!-- Had a buddy who was nice enough to make me a simple quote API for the website. Here's the fetch data he gave me.-->
         <script defer>
-            const api_url=`https://api.allorigins.win/get?url=${encodeURIComponent('https://quotes.rest/qod')}`;
+            function getQuote(){
+                fetch("https://nathanspackman.com/quotes")
+                .then(response => response.json())
+                .then(data => {
+                 const quotetext =`"${data.quote.content}" - ${data.quote.saidby}`;
+                 document.getElementById("quote").textContent = quotetext;
+                })
+                .catch( error =>{
+                 console.error("Error fetching quote", error);
+                 document.getElementById("quote").textContent = "Can't get your quote."
+                })
+            }
+             setInterval(getQuote, 3000);
 
-    async function getapi(url)
-    {
-        const response = await fetch(url);
-        var data = await response.json();
-        console.log(data);
-    }
 
-        getapi(api_url);
-        var header = document.getElementById("quoteheader");
-
-    </script>
+         </script>
 
 
         <br>
@@ -56,12 +60,12 @@
                     find new things to read or listen to, and at least hope that I can try and make a difference in the industry, where
                     I feel like gaming has become more of a tool for companies to generate as much profit as possible before pulling the plug.
                 </p>
-                Here are a few pictures!
+                <strong>Here are a few pictures! Not of me, but still pictures!</strong>
                 <br>
                 <!--For the love of everything holy, please remember to put the image you're scripting ABOVE your script.-->
-                <img id="slide"width="300">
+                <img id="slide"width="500" height="500">
                 <script defer> //Defer means that this loads when the webpage itself loads. Very useful for controlling what goes last!
-                    const img_array = ["the_legend.jpg", "oven.gif"]
+                    const img_array = ["images/the_legend.jpg", "images/oven.gif", "images/awman.png"]
                     
                     let currentimage = 0;
                     const img = document.getElementById('slide');
@@ -74,7 +78,7 @@
                         img.src =img_array[currentimage];
                     }
                     
-                    let stop = setInterval(slideshow, 1000)
+                    let stop = setInterval(slideshow, 3000)
                     </script>
 
                     
@@ -87,18 +91,21 @@
                     If you are interested, put your email below to get in contact with me.
                     This is where you can get me immediately.
                     <br>
-                    <input type="text" placeholder="enter your email here...">
-                    <input type="button" placeholder="submit" title="Submit">
+                    <input type="text" placeholder="enter your email here..." id="input">
+                    <input type="button" placeholder="submit" title="Submit" id="submit">
                     <br>                    
                 </p>
             </article>
+            <script>
+                document.getElementById("submit").onclick = function(){
+                     var answer = document.getElementById("input").value;
+                     alert("Got it! I'm going to sign up " + answer + " to so many scam email chains. muahahahaha")
+
+                 }
+            </script>
             
         </main>
         <footer><i>©2025 by Cole Neely</i></footer>
     </body>
-    <!--Again, this is the main webpage, but a giant work in progress.-->
-    <!-- I guess that this will just be another portfolio job, hopefully one that I don't lose this time.-->
     
-    <!-- This will be a portfolio index. I changed the title to be orange. Today I learned how to actively change colors for text.-->
-    <!--Added a YT video, table and list.-->
 </html>
