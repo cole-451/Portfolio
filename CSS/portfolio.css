@@ -1,6 +1,6 @@
 body{
     width: auto;
-    background-color: #FA5200;
+    background-color: #ADA7A7;
 }
 
 header{
@@ -10,7 +10,7 @@ header{
 h1{
     color: #FA0F1C;
     text-align: center;
-    background-color: #FA860F;
+    background-color: #62605E;
     font-family: monospace;
     font-size: 100px;
 }
@@ -39,5 +39,5 @@ p{
 }
 
 footer{
-    color:yellow;
+    color:orangered;
 }

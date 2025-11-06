@@ -8,7 +8,7 @@ header{
 }
 
 h1{
-    color: #FA0F1C;
+    color: #FA5200;
     text-align: center;
     background-color: #62605E;
     font-family: monospace;
@@ -26,11 +26,13 @@ h2{
 }
 
 img{
-    margin: 20px 20px 20px 20px;
+    margin: 60px 20px 20px 20px;
     align-items: center;
     border:#FA0F1C;
     border-style: solid;
     border-width: 10px;
+    width: 1000px;
+    height: 600px;
     
 }
 
